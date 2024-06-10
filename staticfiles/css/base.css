@@ -39,7 +39,7 @@ main {
 }
 
 .active {
-    color: #e20000 !important;
+    color: #dc3545 !important;
 }
 
 /* Footer */
@@ -56,6 +56,11 @@ footer {
 .social-icon {
     height: 2rem;
     margin: 1rem;
+}
+
+/* Main Content Styles*/
+#hero-btn {
+    margin-bottom: 10px;
 }
 
 
