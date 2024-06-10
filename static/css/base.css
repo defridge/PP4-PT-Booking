@@ -1,6 +1,72 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    /* Fonts */
+    --main-font: 'Montserrat', serif;
+
+    /* Utils */
+    --small-box-shadow: 1px -1px 7px 0 #00000061;
+    --border: 1px solid #00000030;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--main-font);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: white
+}
 
 /* Header Styles */
 #navbarNav {
     justify-content: flex-end;
+}
+
+.navbar {
+    box-shadow: var(--small-box-shadow);
+}
+
+.active {
+    color: #e20000 !important;
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background-color: #212529;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: var(--small-box-shadow);
+    color: #ffffff
+
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1.5rem;
+}
+
+.address .contact {
+    color: #ffffff
+}
+
+/* Media query for small phones (442px and below) */
+@media only screen and (max-width: 442px) {
+    #title {
+        font-size: 20px;
+    }
 }
