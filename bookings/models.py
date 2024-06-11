@@ -1,7 +1,10 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import User
 
-# Create your models here.
+def get_current_date():
+    return timezone.now().date()
+
 SESSION_TYPE_CHOICES = [
     ('consultation', 'Consultation'),
     ('personal_training', 'Personal Training'),
@@ -18,26 +21,18 @@ TIME_CHOICES = [
     ('17:00', '5:00 PM - 6:00 PM'),
 ]
 
-DAY_CHOICES = [
-    ('monday', 'Monday'),
-    ('tuesday', 'Tuesday'),
-    ('wednesday', 'Wednesday'),
-    ('thursday', 'Thursday'),
-    ('friday', 'Friday'),
-    ('saturday', 'Saturday'),
-]
-
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    day = models.CharField(max_length=10, choices=DAY_CHOICES, default='monday')
-    time = models.CharField(max_length=5, choices=TIME_CHOICES, default='08:00')
-    session_type = models.CharField(max_length=20, choices=SESSION_TYPE_CHOICES, default='consultation')
-    duration = models.IntegerField(default=60)
-    contact_number = models.CharField(max_length=15, default='000-000-0000')
-    contact_email = models.EmailField(default='default@example.com')
-    additional_info = models.TextField(max_length=1000, blank=True, null=True)
+    date = models.DateField(default=get_current_date)
+    time = models.CharField(max_length=20, choices=TIME_CHOICES)
+    session_type = models.CharField(max_length=20, choices=SESSION_TYPE_CHOICES)
+    duration = models.IntegerField(default=60)  # Duration in minutes
+    contact_number = models.CharField(max_length=15)
+    contact_email = models.EmailField()
+    additional_info = models.TextField(blank=True, null=True, max_length=1000)  # Field for additional information
+
+    class Meta:
+        unique_together = ('date', 'time')
 
     def __str__(self):
-        return f"{self.user.username} - {self.session_type} on {self.day} at {self.time}"
-
-
+        return f"{self.user.username} - {self.session_type} on {self.date} at {self.time}"

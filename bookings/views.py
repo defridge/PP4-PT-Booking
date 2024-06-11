@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import BookingForm
 from django.contrib.auth.decorators import login_required
+from .forms import BookingForm
 
 @login_required
 def create_booking(request):
@@ -17,4 +17,4 @@ def create_booking(request):
 
 @login_required
 def booking_success(request):
-    return render(request, 'bookings/success.html')
+    return render(request, 'bookings/booking_success.html')

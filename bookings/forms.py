@@ -4,9 +4,9 @@ from .models import Booking
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['day', 'time', 'session_type', 'contact_number', 'contact_email', 'additional_info']
+        fields = ['date', 'time', 'session_type', 'contact_number', 'contact_email', 'additional_info']
         widgets = {
-            'day': forms.Select(),
+            'date': forms.DateInput(attrs={'type': 'date'}),
             'time': forms.Select(),
             'session_type': forms.Select(),
             'contact_number': forms.TextInput(attrs={'type': 'tel'}),
@@ -16,17 +16,10 @@ class BookingForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        day = cleaned_data.get('day')
+        date = cleaned_data.get('date')
         time = cleaned_data.get('time')
         
-        if Booking.objects.filter(day=day, time=time).exists():
+        if Booking.objects.filter(date=date, time=time).exists():
             raise forms.ValidationError("This time slot is already booked.")
         
         return cleaned_data
-
-    def clean_contact_email(self):
-        email = self.cleaned_data.get('contact_email')
-        if not email:
-            raise forms.ValidationError("This field is required.")
-        # Additional custom validation can be added here
-        return email
