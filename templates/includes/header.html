@@ -21,8 +21,10 @@
               href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.path|slice:":9" == "/bookings" %}active{% endif %}" aria-current="page"
-              href="{% url 'create_booking' %}">Bookings</a>
+            <a class="nav-link {% if request.path == booking_url %}active{% endif %}" aria-current="page" href="{% url 'create_booking' %}">Create Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == manage_bookings_url %}active{% endif %}" aria-current="page" href="{{ manage_bookings_url }}">Manage Bookings</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == pricing_url %}active{% endif %}" aria-current="page"
