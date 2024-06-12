@@ -70,3 +70,18 @@ footer {
         font-size: 20px;
     }
 }
+
+/* Booking Form Styles, Signin Styles, Signup Styles */
+#id_date,
+#id_contact_number,
+#id_contact_email,
+#id_additional_info,
+#id_login,
+#id_password,
+#id_username,
+#id_email,
+#id_password1,
+#id_password2,
+select {
+    width: 100%;
+}

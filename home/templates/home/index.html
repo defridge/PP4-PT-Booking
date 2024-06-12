@@ -11,7 +11,7 @@ Home - Personal Training Info
     <div class="container">
         <h1 class="display-4">Welcome to Heros Personal Training</h1>
         <p class="lead">Achieve your fitness goals with personalized training and nutrition plans.</p>
-        <a href="#services" class="btn btn-dark btn-lg" id="hero-btn">Click to book a session!</a>
+        <a href="{% url 'create_booking' %}" class="btn btn-dark btn-lg" id="hero-btn">Click to book a session!</a>
     </div>
 </section>
 
@@ -72,7 +72,7 @@ Home - Personal Training Info
     <div class="container">
         <h2>Are you ready to become your own Hero?</h2>
         <p>Click below to schedule your first session.</p>
-        <a href="#contact" class="btn btn-dark btn-lg">Book In</a>
+        <a href="{% url 'create_booking' %}" class="btn btn-dark btn-lg">Book In</a>
     </div>
 </section>
 

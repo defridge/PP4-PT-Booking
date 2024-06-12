@@ -26,10 +26,10 @@ class Booking(models.Model):
     date = models.DateField(default=get_current_date)
     time = models.CharField(max_length=20, choices=TIME_CHOICES)
     session_type = models.CharField(max_length=20, choices=SESSION_TYPE_CHOICES)
-    duration = models.IntegerField(default=60)  # Duration in minutes
+    duration = models.IntegerField(default=60)
     contact_number = models.CharField(max_length=15)
     contact_email = models.EmailField()
-    additional_info = models.TextField(blank=True, null=True, max_length=1000)  # Field for additional information
+    additional_info = models.TextField(default='Any additional information please provide here...', blank=False, null=False, max_length=1000)
 
     class Meta:
         unique_together = ('date', 'time')
