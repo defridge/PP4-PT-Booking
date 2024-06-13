@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block head_title %}Manage Bookings{% endblock head_title %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Manage Bookings' %}
+{% endblock  %}
 
 {% block content %}
 <div class="container py-5">
-    <h1 class="text-center mb-4">Manage Your Bookings</h1>
+    <h1 class="text-center mb-4">{% trans 'Manage Your Bookings' %}</h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
             {% if bookings %}

@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% load i18n %}
+
 {% block title %}
-Home - Personal Training Info
+{%trans 'Home' %}
 {% endblock %}
 
 {% block content %}
@@ -15,7 +17,7 @@ Home - Personal Training Info
     </div>
 </section>
 
-<!-- About Section -->
+<!-- About Me Section -->
 <section id="about" class="py-5">
     <div class="container">
         <div class="row">
@@ -44,28 +46,78 @@ Home - Personal Training Info
     </div>
 </section>
 
+<!-- Service Details Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container services">
+        <h2 class="text-center mb-5">How Our Service Works</h2>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'images/nutrition_tracking.webp' %}" class="img-fluid service-img" alt="Nutrition Tracking">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h3>Nutrition Tracking</h3>
+                    <p>Track your nutrition with our easy-to-use GoogleSheets. Monitor your intake and get personalized meal plans and macros that fit your goals and lifestyle.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'images/training.webp' %}" class="img-fluid service-img" alt="Training">
+            </div>
+            <div class="col-md-6 d-flex align-items-center order-md-1">
+                <div>
+                    <h3>Training</h3>
+                    <p>Engage in personalized training sessions designed to help you reach your fitness goals. Our sessions are tailored to your needs, whether you're a beginner or an advanced athlete.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'images/weekly_checkin.webp' %}" class="img-fluid service-img" alt="Weekly Check-in">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h3>Weekly Check-ins</h3>
+                    <p>Stay on track with our weekly check-ins. We'll review your progress, adjust your plan as needed, and provide video feedback.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Testimonials Section -->
 <section id="testimonials" class="py-5">
     <div class="container">
         <h2 class="text-center mb-5">Testimonials</h2>
         <div class="row">
             <div class="col-md-6 mb-4">
-                <div class="testimonial text-center p-4 border rounded">
-                    <p class="mb-0">"This training program changed my life. I have never felt stronger and more
-                        confident."</p>
-                    <p class="mt-3"><strong>John Smith</strong><br><em>John lost 20kg's!</em></p>
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <p class="card-text">"This training program changed my life. I have never felt stronger and more confident."</p>
+                        <hr>
+                        <p class="card-title"><strong>John Smith</strong></p>
+                        <p class="card-subtitle mb-2 text-muted"><em>John lost 20kg's!</em></p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="testimonial text-center p-4 border rounded">
-                    <p class="mb-0">"The personalized approach is exactly what I needed to stay motivated and see
-                        results."</p>
-                    <p class="mt-3"><strong>Mary Jane</strong><br><em>Busy Mum of three!</em></p>
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <p class="card-text">"The personalized approach is exactly what I needed to stay motivated and see results."</p>
+                        <hr>
+                        <p class="card-title"><strong>Mary Jane</strong></p>
+                        <p class="card-subtitle mb-2 text-muted"><em>Busy Mum of three!</em></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Call to Action Section -->
 <section id="cta" class="py-5 bg-danger text-white text-center">

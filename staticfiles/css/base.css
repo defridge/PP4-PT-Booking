@@ -58,7 +58,7 @@ footer {
     margin: 1rem;
 }
 
-/* Main Content Styles*/
+/* Main Content Styles */
 #hero-btn {
     margin-bottom: 10px;
 }
@@ -84,4 +84,49 @@ footer {
 #id_password2,
 select {
     width: 100%;
+}
+
+/* Messages Styles */
+.alert {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Service Styles */
+.services {
+    text-align: center;
+}
+
+.service-img {
+    margin-bottom: 10px;
+}
+
+/* Testimonials Styles */
+#testimonials .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#testimonials .card:hover {
+    transform: translateY(-10px);
+}
+
+#testimonials .card-body {
+    padding: 2rem;
+}
+
+#testimonials .card-text {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+#testimonials .card-title {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+#testimonials .card-subtitle {
+    font-size: 1rem;
 }

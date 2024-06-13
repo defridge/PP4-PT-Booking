@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block head_title %}Delete Booking{% endblock head_title %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Delete Booking' %}
+{% endblock  %}
 
 {% block content %}
 <div class="container py-5">
-    <h1 class="text-center mb-4">Delete Booking</h1>
+    <h1 class="text-center mb-4">{% trans 'Delete Booking' %}</h1>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <p>Are you sure you want to delete your booking for {{ booking.session_type }} on {{ booking.date }} at {{ booking.time }}?</p>
