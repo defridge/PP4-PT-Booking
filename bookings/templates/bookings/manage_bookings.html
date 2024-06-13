@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Manage Bookings{% endblock head_title %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Manage Your Bookings</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% if bookings %}
+                <ul class="list-group">
+                    {% for booking in bookings %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ booking.session_type }} on {{ booking.date }} at {{ booking.time }}
+                            <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger btn-sm">Delete</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-center">You have no bookings.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
