@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import BookingForm
 from .models import Booking
 
@@ -49,3 +50,17 @@ def delete_booking(request, booking_id):
         booking.delete()
         return redirect('manage_bookings')
     return render(request, 'bookings/delete_booking.html', {'booking': booking})
+
+
+def custom_login_required_view(view_func):
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.info(request, 'Please sign in to access this page.')
+            return redirect('account_login')
+        return view_func(request, *args, **kwargs)
+    return wrapper
+
+create_booking = custom_login_required_view(create_booking)
+manage_bookings = custom_login_required_view(manage_bookings)
+edit_booking = custom_login_required_view(edit_booking)
+delete_booking = custom_login_required_view(delete_booking)
