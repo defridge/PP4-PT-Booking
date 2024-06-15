@@ -61,7 +61,6 @@ Hero's Personal Training is a comprehensive web application designed to help use
 #### Epic 3: Authentication
 
 - As a developer, I need to implement allauth so that users can sign up and have access to the website's features.
-- As a site owner, I want users to verify their email when registering an account.
 - As a site owner, I would like the allauth pages customized to fit the site's styling.
 
 #### Epic 4: Booking Management 
@@ -89,19 +88,95 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 
 ### Implemented Features
 
-1. **User Authentication:** 
-   - User registration and login.
-   - Password reset functionality.
-   - Secure authentication using Django Allauth.
+1. **Site Navigation/Nav Menu:** 
+   - ``USER STORY - As a developer, I need to create the navbar so that users can navigate the website from any device.``
+   - The navigation menu contains links for Home, Create Booking, Manage Bookings, Sign Up, and Sign in (If the user hasnt signed in).
+   - If the user has sign in the links shown will be Home, Create Booking, Manage Bookings, and Sign Out.
+   - The links are displayed on all pages and the navigation menu collapses into the hamburger menu on smaller devices.
 
-2. **Booking Management:**
-   - Book personal training sessions.
-   - View, edit, and cancel bookings.
-   - Trainers can view all bookings.
+  ![Mock Up](docs/readme_images/)
 
-3. **Responsive Design:**
-   - Accessible on desktops, tablets, and smartphones.
+2. **Home Page:**
+   - ``USER STORY - As a site owner, I would like a home page so that customers can view information about my services.``
+   - When the app is loaded from the url the user is brought to the app home page.
+   - The home page is made up of 5 sections:
+      1. Hero Section - The hero section is a the top of the home page and includes a welcome message, and a "Book Session" button.
+      2. About Me Section - Next we have a section that provides info and background about the trainer/trainers.
+      3. Service Details Section - Provides the user with all the info on the services provided by the trainer/trainers.
+      4. Testimonials Section - Client testimonials are displayed here.
+      5. Call to Action Section - Displays company tag line and priveds another button element that will allow users to make a booking.
 
+  ![Mock Up](docs/readme_images/)
+
+3. **Footer:**
+   - ``USER STORY - As a developer, I need to create the footer with social media links and contact information.``
+   - The footer section shows at the bottom of all pages.
+   - contains all social page icons which link to the social media sites and open in a new tab.
+   - Contains all relevant contact info and address.
+
+  ![Mock Up](docs/readme_images/)
+
+4. **Sign Up:**
+  - ``USER STORY - As a developer, I need to implement allauth so that users can sign up and have access to the website's features.``
+  - The sign up page can be clicked on in the nav menu (if the user hasnt already signed in) or can accessed via the link in the sign up page.
+  - The sign up form has 4 sections:
+      1. Username - A user must enter a username and it will be this username they use to sign into the account in the future.
+      2. Email - A user can enter an email address here but this is optional.
+      3. Password - A user must enter a password for their account here.
+      4. Confirm password - a user must confirm their password here and it must match the password above.
+  - If sign up has been successful the user will be redirected to the site home page.
+
+  ![Mock Up](docs/readme_images/)
+
+4. **Create Booking:**
+  - ``USER STORY - As a user, I would like to create a new booking when I want to schedule a training session.``
+  - The create booking page only shows when a user has registered with the site as a user and has looged in.
+  - If a user has not signed in they will be redicted to the sign in page.
+
+  ![Mock Up](docs/readme_images/)
+
+  - If a user has successfully sign in they will be sent to the create booking page.
+  - The create booking form has 6 sections the user must fill in:
+      1. Date - The user is asked to choose a date for their session.
+      2. Time - The user will be asked to choose a a time for there session that are predetermined by the trainer (if the time is already booked the user will be asked to choose another time).
+      3. Session Type - The user will have a choice between 2 session types: Consultation or Personal Training.
+      4. Contact number - The user must enter a contact number.
+      5. Email address - The user must enter a email address.
+      6. Additional info - The user is asked to provide any additional info they feel is relevant or that theyd like the trainer to know before the first session.
+  - If the suer leaves any section incomplete, except for the additional info section the form will not submit.
+
+  ![Mock Up](docs/readme_images/)
+
+5. **Managing Bookings:**
+  - ``USER STORY - As a user, I would like to view my bookings to check the details.``
+  - ``USER STORY - As a user, I would like to edit a booking to make changes when needed.``
+  - ``USER STORY - As a user, I would like to delete a booking when I no longer need it.``
+  - On the manage booking page the user is able to see all the sessions they have booked with the trainer.
+  - The are shown the session type, and the date and time it is due to take place.
+  - From here the user will have 2 options to edit an existing booking and delete a booking.
+
+  ![Mock Up](docs/readme_images/)
+
+  - If a user clicks edit they are taken to their origanl booking form with all the info they have already entered when making the booking.
+  - From here the user can change any of the sections and save their changes or cancel them.
+
+  ![Mock Up](docs/readme_images/)
+
+  - If a user clicks on delete they will be asked to confirm if they wish to delete their booking or can cancel the delete request.
+
+  ![Mock Up](docs/readme_images/)
+
+6. **Trainer Booking Management:**
+  - ``USER STORY - As a trainer, I want to be able to view all bookings to manage my schedule.``
+  - At present the site allows for one trainer and that trainer is registered as the sites superuser and can manage their clients bookings via the admin page.
+  - Once the trainer has logged is they can navigated to the bookings section on the admin panel.
+  - From here the trainer can see any and all bookings their clients have made.
+  - They can see all the info the client input on the create booking form.
+  - From here they can filter the bookings by date, time or session type.
+  - They can also delete the bookings from this page if they wish.
+
+  ![Mock Up](docs/readme_images/)
+  
 ### Features Left to Implement
 
 1. **Social Media Integration:**

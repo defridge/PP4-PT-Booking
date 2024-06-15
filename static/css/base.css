@@ -47,16 +47,53 @@ footer {
     flex-shrink: 0;
     background-color: #212529;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
+    text-align: center;
     border-top: var(--small-box-shadow);
 }
 
-.social-icon {
-    height: 2rem;
-    margin: 1rem;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    border: none;
+}
+
+.social-icon, .footer-social .social-icon {
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+}
+
+.footer-contact {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-contact p, .footer-contact a {
+    margin: 5px 0;
+    color: white;
+}
+
+.footer-contact a {
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
 
 /* Main Content Styles */
 #hero-btn {
