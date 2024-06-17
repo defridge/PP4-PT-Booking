@@ -89,46 +89,47 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 ### Implemented Features
 
 1. **Site Navigation/Nav Menu:** 
-   - ``USER STORY - As a developer, I need to create the navbar so that users can navigate the website from any device.``
-   - The navigation menu contains links for Home, Create Booking, Manage Bookings, Sign Up, and Sign in (If the user hasnt signed in).
-   - If the user has sign in the links shown will be Home, Create Booking, Manage Bookings, and Sign Out.
-   - The links are displayed on all pages and the navigation menu collapses into the hamburger menu on smaller devices.
+  - ``USER STORY - As a developer, I need to create the navbar so that users can navigate the website from any device.``
+  - The navigation menu contains links for Home, Create Booking, Manage Bookings, Sign Up, and Sign in (If the user hasnt signed in).
+  - If the user has sign in the links shown will be Home, Create Booking, Manage Bookings, and Sign Out.
+  - The links are displayed on all pages and the navigation menu collapses into the hamburger menu on smaller devices.
 
   ![Mock Up](docs/readme_images/)
 
 2. **Home Page:**
-   - ``USER STORY - As a site owner, I would like a home page so that customers can view information about my services.``
-   - When the app is loaded from the url the user is brought to the app home page.
-   - The home page is made up of 5 sections:
-      1. Hero Section - The hero section is a the top of the home page and includes a welcome message, and a "Book Session" button.
-      2. About Me Section - Next we have a section that provides info and background about the trainer/trainers.
-      3. Service Details Section - Provides the user with all the info on the services provided by the trainer/trainers.
-      4. Testimonials Section - Client testimonials are displayed here.
-      5. Call to Action Section - Displays company tag line and priveds another button element that will allow users to make a booking.
+  - ``USER STORY - As a site owner, I would like a home page so that customers can view information about my services.``
+  - When the app is loaded from the url the user is brought to the app home page.
+  - The home page is made up of 5 sections:
+    1. Hero Section - The hero section is a the top of the home page and includes a welcome message, and a "Book Session" button.
+    2. About Me Section - Next we have a section that provides info and background about the trainer/trainers.
+    3. Service Details Section - Provides the user with all the info on the services provided by the trainer/trainers.
+    4. Testimonials Section - Client testimonials are displayed here.
+    5. Call to Action Section - Displays company tag line and priveds another button element that will allow users to make a booking.
 
   ![Mock Up](docs/readme_images/)
 
 3. **Footer:**
-   - ``USER STORY - As a developer, I need to create the footer with social media links and contact information.``
-   - The footer section shows at the bottom of all pages.
-   - contains all social page icons which link to the social media sites and open in a new tab.
-   - Contains all relevant contact info and address.
+  - ``USER STORY - As a developer, I need to create the footer with social media links and contact information.``
+  - The footer section shows at the bottom of all pages.
+  - contains all social page icons which link to the social media sites and open in a new tab.
+  - Contains all relevant contact info and address.
 
   ![Mock Up](docs/readme_images/)
 
 4. **Sign Up:**
   - ``USER STORY - As a developer, I need to implement allauth so that users can sign up and have access to the website's features.``
   - The sign up page can be clicked on in the nav menu (if the user hasnt already signed in) or can accessed via the link in the sign up page.
-  - The sign up form has 4 sections:
-      1. Username - A user must enter a username and it will be this username they use to sign into the account in the future.
-      2. Email - A user can enter an email address here but this is optional.
-      3. Password - A user must enter a password for their account here.
-      4. Confirm password - a user must confirm their password here and it must match the password above.
+  - The sign up form has 5 sections:
+    1. Email - A user must enter a email address.
+    2. Email (again) - A user must confirm the email address by inputting it again here.
+    3. Username - A user must enter a username and it will be this username they use to sign into the account in the future.
+    4. Password - A user must enter a password for their account here.
+    5. Confirm password - a user must confirm their password here and it must match the password above.
   - If sign up has been successful the user will be redirected to the site home page.
 
   ![Mock Up](docs/readme_images/)
 
-4. **Create Booking:**
+5. **Create Booking:**
   - ``USER STORY - As a user, I would like to create a new booking when I want to schedule a training session.``
   - The create booking page only shows when a user has registered with the site as a user and has looged in.
   - If a user has not signed in they will be redicted to the sign in page.
@@ -137,17 +138,17 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 
   - If a user has successfully sign in they will be sent to the create booking page.
   - The create booking form has 6 sections the user must fill in:
-      1. Date - The user is asked to choose a date for their session.
-      2. Time - The user will be asked to choose a a time for there session that are predetermined by the trainer (if the time is already booked the user will be asked to choose another time).
-      3. Session Type - The user will have a choice between 2 session types: Consultation or Personal Training.
-      4. Contact number - The user must enter a contact number.
-      5. Email address - The user must enter a email address.
-      6. Additional info - The user is asked to provide any additional info they feel is relevant or that theyd like the trainer to know before the first session.
+    1. Date - The user is asked to choose a date for their session.
+    2. Time - The user will be asked to choose a a time for there session that are predetermined by the trainer (if the time is already booked the user will be asked to choose another time).
+    3. Session Type - The user will have a choice between 2 session types: Consultation or Personal Training.
+    4. Contact number - The user must enter a contact number.
+    5. Email address - The user must enter a email address.
+    6. Additional info - The user is asked to provide any additional info they feel is relevant or that theyd like the trainer to know before the first session.
   - If the suer leaves any section incomplete, except for the additional info section the form will not submit.
 
   ![Mock Up](docs/readme_images/)
 
-5. **Managing Bookings:**
+6. **Managing Bookings:**
   - ``USER STORY - As a user, I would like to view my bookings to check the details.``
   - ``USER STORY - As a user, I would like to edit a booking to make changes when needed.``
   - ``USER STORY - As a user, I would like to delete a booking when I no longer need it.``
@@ -166,7 +167,7 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 
   ![Mock Up](docs/readme_images/)
 
-6. **Trainer Booking Management:**
+7. **Trainer Booking Management:**
   - ``USER STORY - As a trainer, I want to be able to view all bookings to manage my schedule.``
   - At present the site allows for one trainer and that trainer is registered as the sites superuser and can manage their clients bookings via the admin page.
   - Once the trainer has logged is they can navigated to the bookings section on the admin panel.
@@ -176,25 +177,36 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
   - They can also delete the bookings from this page if they wish.
 
   ![Mock Up](docs/readme_images/)
+
+8. **Error Pages**
+  - ``As a developer, I need to implement a 404 error page to alert users when they access a non-existent page.``
+  - ``As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.``
+  - ``As a developer, I need to implement a 403 error page to redirect unauthorized users.``
+  - If a user navigates to a broken link/missing page then a custom 404 error page will be displayed that easily helps the user get back to the home page without using the browser back buttons.
+  - A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
+  - A 403 error page has been created and styled to match the other error pages in look and functionality, however at present there is no reason why this error page would be raised with this project.
+
+9. **Base Setup and Other User Stories**
+  - ``As a developer, I need to set up the project so that it is ready for implementing core features.``
+  - ``As a developer, I need to create the base.html page and structure so that other pages can reuse the layout.``
+  - ``As a developer, I need to create static resources so that images, CSS, and JavaScript work on the website.``
+  - ``As a site owner, I would like the allauth pages customized to fit the site's styling.``
+  - All the above user stories have been implemented in order to complete all the features of the app as outlined above.
   
 ### Features Left to Implement
 
 1. **Social Media Integration:**
-   - Allow users to share their progress on social media platforms.
+    - Allow users to share their progress on social media platforms.
 
 2. **In-App Messaging:**
-   - Enable communication between trainers and clients within the app.
+    - Enable communication between trainers and clients within the app.
 
-3. **Advanced Analytics:**
-   - Provide detailed analytics and insights on user progress and performance.
+3. **Multiple Trainers:**
+    - Have multiple trainers on the app
 
-4. **Training and Nutrition Plans:**
-   - Personalized training plans based on user goals.
-   - Customized nutrition advice.
-
-5. **Progress Tracking:**
-   - Log workouts and track progress.
-   - View progress over time with visual charts.
+4. **Progress Tracking:**
+    - Log workouts and track progress.
+    - View progress over time with visual charts.
 
 ## Technologies Used
 
@@ -213,3 +225,61 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 
 - **Deployment:**
   - Heroku
+
+## Database Design
+
+### Database Design Summary for the Booking Model
+
+The `Booking` model represents the core of the database design for the application. It is used to manage and store information about personal training and consultation sessions booked by users. Below is a summary of the database design based on the provided `Booking` model.
+
+#### Models
+
+1. **User Model**
+   - **User**: Provided by Django's built-in authentication system (`django.contrib.auth.models.User`).
+     - This model manages user-related data including username, password, email, etc.
+
+2. **Booking Model**
+   - **Booking**: Custom model for storing booking information.
+     - Fields:
+       - **user**: Foreign key to the `User` model, representing the user who made the booking.
+       - **date**: DateField to store the date of the booking. Defaults to the current date.
+       - **time**: CharField to store the time of the booking. Uses predefined choices for different time slots.
+       - **session_type**: CharField to store the type of session. Uses predefined choices for "Consultation" and "Personal Training".
+       - **duration**: IntegerField to store the duration of the session in minutes. Defaults to 60 minutes.
+       - **contact_number**: CharField to store the user's contact number.
+       - **contact_email**: EmailField to store the user's contact email.
+       - **additional_info**: TextField to store any additional information provided by the user. Has a default value and cannot be blank or null.
+     - **Meta**:
+       - `unique_together = ('date', 'time')`: Ensures that each combination of date and time is unique, preventing double bookings for the same time slot.
+     - **Methods**:
+       - `__str__(self)`: Returns a string representation of the booking, including the username, session type, date, and time.
+
+#### Choices for Fields
+
+1. **SESSION_TYPE_CHOICES**
+   - Defines the types of sessions available for booking:
+     - `('consultation', 'Consultation')`
+     - `('personal_training', 'Personal Training')`
+
+2. **TIME_CHOICES**
+   - Defines the time slots available for booking:
+     - `('08:00', '8:00 AM - 9:00 AM')`
+     - `('09:00', '9:00 AM - 10:00 AM')`
+     - `('10:00', '10:00 AM - 11:00 AM')`
+     - `('11:00', '11:00 AM - 12:00 PM')`
+     - `('14:00', '2:00 PM - 3:00 PM')`
+     - `('15:00', '3:00 PM - 4:00 PM')`
+     - `('16:00', '4:00 PM - 5:00 PM')`
+     - `('17:00', '5:00 PM - 6:00 PM')`
+
+#### Database Relationships
+
+- **One-to-Many Relationship**:
+  - The `Booking` model has a foreign key relationship with the `User` model. This means that each user can have multiple bookings, but each booking is associated with a single user.
+
+#### Constraints
+
+- **Unique Constraint**:
+  - The combination of `date` and `time` must be unique across all bookings to prevent double-booking the same time slot.
+
+This design ensures that the application can effectively manage user bookings, including preventing conflicts and storing all necessary information related to each booking.
