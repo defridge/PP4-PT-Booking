@@ -18,6 +18,7 @@ Hero's Personal Training is a comprehensive web application designed to help use
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Database Design](#database-design)
+  - [Site Design](#site-design)
   - [Security](#security)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -211,11 +212,14 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 ## Technologies Used
 
 - **Frontend:**
-  - HTML5, CSS3
+  - HTML5, CSS3, JavaScript
   - Bootstrap 5
 
 - **Backend:**
   - Python, Django
+
+- **IDE:**
+  - GitPod (Visual Studio Code Online)
 
 - **Database:**
   - PostgreSQL
@@ -225,6 +229,63 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 
 - **Deployment:**
   - Heroku
+
+- **Site Syling:**
+  - Google Fonts, Favicon.io
+
+- **Image Processing**
+  - convertio.co, TinyPNG
+
+### Python Modules Used in the Project
+
+#### Standard Python Modules:
+- `os`: Used for accessing environment variables and handling file paths.
+- `timezone`: Used for managing date and time operations.
+- `forms`: Used for creating forms.
+- `models`: Used for creating database models.
+
+#### Django Modules:
+- `django`: The primary framework for building the application.
+- `django.contrib.admin`: Provides the Django admin interface.
+- `django.contrib.auth`: Provides authentication framework.
+- `django.contrib.contenttypes`: Supports generic relations between models.
+- `django.contrib.sessions`: Manages user sessions.
+- `django.contrib.messages`: Provides a messaging framework.
+- `django.contrib.staticfiles`: Manages static files.
+- `django.contrib.sites`: Enables multi-site support.
+- `django.template.backends.django.DjangoTemplates`: Used for template rendering.
+- `django.template.context_processors`: Provides context processors for templates.
+- `django.middleware`: Provides various middleware classes for processing requests.
+- `django.db`: Provides database management functionalities.
+
+#### Third-Party Modules:
+- `dj_database_url`: Used for parsing database URLs.
+- `allauth`: Provides authentication, registration, account management, and more.
+- `allauth.account`: Extends `allauth` for account management.
+- `allauth.socialaccount`: Extends `allauth` for social account management.
+- `whitenoise.middleware.WhiteNoiseMiddleware`: Serves static files in production.
+
+#### Environment Management:
+- `env`: For accessing environment variables.
+
+#### Other Modules:
+- `django.contrib.messages.constants as messages`: Provides constants for message tags.
+- `django.forms`: Provides form handling.
+
+### External Python Modules
+
+- `asgiref==3.8.1`: ASGI (Asynchronous Server Gateway Interface) reference implementation and utilities.
+- `dj-database-url==0.5.0`: Utility to parse database URLs.
+- `Django==4.2.13`: The web framework used to build the project.
+- `django-allauth==0.57.2`: Integrated set of Django applications addressing authentication, registration, account management, and third-party (social) account authentication.
+- `gunicorn==20.1.0`: Python WSGI HTTP Server for UNIX.
+- `oauthlib==3.2.2`: A generic and thorough implementation of the OAuth request-signing logic.
+- `psycopg2==2.9.9`: PostgreSQL database adapter for Python.
+- `PyJWT==2.8.0`: JSON Web Token implementation in Python.
+- `python3-openid==3.2.0`: Python OpenID support.
+- `requests-oauthlib==2.0.0`: OAuthlib support for Python Requests.
+- `sqlparse==0.5.0`: A non-validating SQL parser.
+- `whitenoise==5.3.0`: Radically simplified static file serving for WSGI applications.
 
 ## Database Design
 
@@ -283,3 +344,17 @@ The `Booking` model represents the core of the database design for the applicati
   - The combination of `date` and `time` must be unique across all bookings to prevent double-booking the same time slot.
 
 This design ensures that the application can effectively manage user bookings, including preventing conflicts and storing all necessary information related to each booking.
+
+## Site Design
+
+### Colour-Scheme
+
+For this website the primary colors are Black (#212529), Red (#DC3545), and White (#ffffff). The black in mainly used in the nav and footer elements, with some buttons such as call-to-action button being black also. The red is used to give a nice contrast to the black nav and footer elements and is used on most of the buttons throughout the site. White is manily used for all the page backgrounds. These 3 colours match the colour scheme of the pictures used on the site home page and I really like how these all work together to give a clean and professional look.
+
+### Typography
+
+The Montserrat font was used throughout the website. This font is from google fonts and was imported into the style sheet.
+
+### Imagery
+
+All images on the site are owned by the site designer.
