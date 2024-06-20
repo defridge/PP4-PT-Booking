@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from .forms import BookingForm
 from .models import Booking
+from django.utils import timezone
 
 
 @login_required
@@ -64,3 +65,37 @@ create_booking = custom_login_required_view(create_booking)
 manage_bookings = custom_login_required_view(manage_bookings)
 edit_booking = custom_login_required_view(edit_booking)
 delete_booking = custom_login_required_view(delete_booking)
+
+
+# Check if user is staff
+def is_staff(user):
+    return user.is_staff
+
+@login_required
+@user_passes_test(is_staff)
+def manage_client_bookings(request):
+    today = timezone.now().date()
+    bookings = Booking.objects.filter(date__gte=today).order_by('date', 'time')
+    return render(request, 'bookings/manage_client_bookings.html', {'bookings': bookings})
+
+@login_required
+@user_passes_test(is_staff)
+def edit_client_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('manage_client_bookings')
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, 'bookings/edit_client_booking.html', {'form': form})
+
+@login_required
+@user_passes_test(is_staff)
+def delete_client_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('manage_client_bookings')
+    return render(request, 'bookings/delete_client_booking.html', {'booking': booking})

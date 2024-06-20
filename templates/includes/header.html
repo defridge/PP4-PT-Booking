@@ -4,6 +4,7 @@
 {% url 'account_logout' as logout_url %}
 {% url 'create_booking' as booking_url %}
 {% url 'manage_bookings' as manage_bookings_url %}
+{% url 'manage_client_bookings' as manage_client_bookings_url %}
 
 <header>
   <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -21,26 +22,29 @@
             <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page"
               href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == booking_url %}active{% endif %}" aria-current="page" href="{% url 'create_booking' %}">Create Booking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == manage_bookings_url %}active{% endif %}" aria-current="page" href="{% url 'manage_bookings' %}">Manage Bookings</a>
-          </li>
           {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_logout' %}">Sign out</a>
-          </li>
+            {% if user.is_staff %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == manage_client_bookings_url %}active{% endif %}" aria-current="page" href="{% url 'manage_client_bookings' %}">Manage Client Bookings</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == booking_url %}active{% endif %}" aria-current="page" href="{% url 'create_booking' %}">Create Booking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == manage_bookings_url %}active{% endif %}" aria-current="page" href="{% url 'manage_bookings' %}">Manage Bookings</a>
+              </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Sign out</a>
+            </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_signup' %}">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_login' %}">Sign In</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Sign In</a>
+            </li>
           {% endif %}
         </ul>
       </div>

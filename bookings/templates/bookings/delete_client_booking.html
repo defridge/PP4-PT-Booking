@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Delete Booking' %}
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">{% trans 'Delete Booking' %}</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <p>Are you sure you want to delete the booking for {{ booking.session_type }} on {{ booking.date }} at {{ booking.time }}?</p>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <a href="{% url 'manage_client_bookings' %}" class="btn btn-secondary">Cancel</a>
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
