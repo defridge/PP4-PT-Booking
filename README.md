@@ -83,7 +83,7 @@ Hero's Personal Training is a comprehensive web application designed to help use
 - Complete testing documentation write-up
 
 
-The Kanban board was created using GitHub projects and can be viewed [here](https://github.com/users/defridge/projects/2/views/1). The epics are organized into labels: To Do, In Progress, and Done. All user stories have a set of acceptance criteria that confirm when the stories have been completed.
+The Kanban board was created using GitHub projects and can be viewed [here](https://github.com/users/defridge/projects/2/views/1). The user stores are organized into labels: Must have, Should have, and Could have. All user stories have a set of acceptance criteria that confirm when the stories have been completed.
 
 ## Features
 
@@ -382,3 +382,35 @@ All images on the site are owned by the site designer.
 - Create Booking Page Desktop
 
 ![Create Booking Page Web](docs/readme_images/create-booking-web.webp)
+
+- Booking Confirmation Page Desktop
+
+![Booking Confirmation Page Web](docs/readme_images/booking-confirmation-web.webp)
+
+- Manage Boking Page Desktop / Manage Client Bookings Page Desktop
+
+![Manage Booking Page Web](docs/readme_images/manage-bookings-web.webp)
+
+- Edit Booking Page Desktop / Edit Client Bookings Page Desktop 
+
+![Edit Booking Page Web](docs/readme_images/edit-booking-web.webp)
+
+- Delete Booking Page Desktop / Delete Client Bookings Page Desktop
+
+![Delete Booking Page Web](docs/readme_images/delete-booking-web.webp)
+
+- Sign Out Page Desktop
+
+![Sign Out Page Web](docs/readme_images/signout-web.webp)
+
+- Home Page Mobile
+
+![Home Page Mobile](docs/readme_images/home-page-mobile.webp)
+
+- Sign Up, Sign In, Sign Out Mobile
+
+![Sign up, Sign In, Sign Out Mobile](docs/readme_images/singin-singup-signout-mobile.webp)
+
+- Booking Pages Mobile
+
+![Booking Pages Mobile](docs/readme_images/booking-pages-mobile.webp)

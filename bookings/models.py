@@ -29,7 +29,7 @@ class Booking(models.Model):
     duration = models.IntegerField(default=60)
     contact_number = models.CharField(max_length=15)
     contact_email = models.EmailField()
-    additional_info = models.TextField(default='Any additional information please provide here...', blank=False, null=False, max_length=1000)
+    additional_info = models.TextField(blank=False, null=False, max_length=1000)
 
     class Meta:
         unique_together = ('date', 'time')

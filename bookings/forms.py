@@ -11,7 +11,7 @@ class BookingForm(forms.ModelForm):
             'session_type': forms.Select(),
             'contact_number': forms.TextInput(attrs={'type': 'tel'}),
             'contact_email': forms.EmailInput(),
-            'additional_info': forms.Textarea(),
+            'additional_info': forms.Textarea(attrs={'placeholder': 'Any additional information please provide here...'}),
         }
 
     def clean(self):
