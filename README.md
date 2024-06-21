@@ -42,42 +42,42 @@ Hero's Personal Training is a comprehensive web application designed to help use
 - Personal trainers who need an efficient way to manage their clients and schedules.
 - Fitness enthusiasts who want to track their progress and achieve their fitness goals.
 
-### User Stories
+### Milestones & User Stories
 
-#### Epic 1: Base Setup
+#### Milestone 1: Base Setup
 
-- As a developer, I need to set up the project so that it is ready for implementing core features.
-- As a developer, I need to create the base.html page and structure so that other pages can reuse the layout.
-- As a developer, I need to create static resources so that images, CSS, and JavaScript work on the website.
-- As a developer, I need to create the footer with social media links and contact information.
-- As a developer, I need to create the navbar so that users can navigate the website from any device.
+- USER STORY: As a developer, I need to set up the project so that it is ready for implementing core features.
+- USER STORY: As a developer, I need to create the base.html page and structure so that other pages can reuse the layout.
+- USER STORY: As a developer, I need to create static resources so that images, CSS, and JavaScript work on the website.
+- USER STORY: As a developer, I need to create the footer with social media links and contact information.
+- USER STORY: As a developer, I need to create the navbar so that users can navigate the website from any device.
 
-#### Epic 2: Standalone Pages
+#### Milestone 2: Standalone Pages
 
-- As a developer, I need to implement a 404 error page to alert users when they access a non-existent page.
-- As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.
-- As a developer, I need to implement a 403 error page to redirect unauthorized users.
-- As a site owner, I would like a home page so that customers can view information about my services.
+- USER STORY: As a developer, I need to implement a 404 error page to alert users when they access a non-existent page.
+- USER STORY: As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.
+- USER STORY: As a developer, I need to implement a 403 error page to redirect unauthorized users.
+- USER STORY: As a site owner, I would like a home page so that customers can view information about my services.
 
-#### Epic 3: Authentication
+#### Milestone 3: Authentication
 
-- As a developer, I need to implement allauth so that users can sign up and have access to the website's features.
-- As a site owner, I would like the allauth pages customized to fit the site's styling.
+- USER STORY: As a developer, I need to implement allauth so that users can sign up and have access to the website's features.
+- USER STORY: As a site owner, I would like the allauth pages customized to fit the site's styling.
 
-#### Epic 4: Booking Management 
+#### EMilestone 4: Booking Management 
 
-- As a user, I would like to create a new booking when I want to schedule a training session.
-- As a user, I would like to view my bookings to check the details.
-- As a user, I would like to edit a booking to make changes when needed.
-- As a user, I would like to delete a booking when I no longer need it.
-- As a trainer, I want to be able to view all bookings to manage my schedule.
+- USER STORY: As a user, I would like to create a new booking when I want to schedule a training session.
+- USER STORY: As a user, I would like to view my bookings to check the details.
+- USER STORY: As a user, I would like to edit a booking to make changes when needed.
+- USER STORY: As a user, I would like to delete a booking when I no longer need it.
+- USER STORY: As a trainer, I want to be able to view all bookings to manage my schedule.
 
-#### Epic 5: Deployment
+#### Milestone 5: Deployment
 
-- As a developer, I need to set up Whitenoise to serve static files in deployment.
-- As a developer, I need to deploy the project to Heroku to make it live for users.
+- USER STORY: As a developer, I need to set up Whitenoise to serve static files in deployment.
+- USER STORY: As a developer, I need to deploy the project to Heroku to make it live for users.
 
-#### Epic 6: Documentation
+#### Milestone 6: Documentation
 
 - Complete README documentation
 - Complete testing documentation write-up
