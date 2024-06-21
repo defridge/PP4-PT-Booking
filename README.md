@@ -12,7 +12,7 @@ Hero's Personal Training is a comprehensive web application designed to help use
   - [User Experience Design](#user-experience-design)
     - [Project Goals](#project-goals)
     - [Target Audience](#target-audience)
-    - [User Stories](#user-stories)
+    - [Milestones & User Stories](#milestones--user-stories)
   - [Features](#features)
     - [Implemented Features](#implemented-features)
     - [Features Left to Implement](#features-left-to-implement)
@@ -64,7 +64,7 @@ Hero's Personal Training is a comprehensive web application designed to help use
 - USER STORY: As a developer, I need to implement allauth so that users can sign up and have access to the website's features.
 - USER STORY: As a site owner, I would like the allauth pages customized to fit the site's styling.
 
-#### EMilestone 4: Booking Management 
+#### Milestone 4: Booking Management 
 
 - USER STORY: As a user, I would like to create a new booking when I want to schedule a training session.
 - USER STORY: As a user, I would like to view my bookings to check the details.
@@ -91,8 +91,10 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 
 1. **Site Navigation/Nav Menu:** 
   - ``USER STORY - As a developer, I need to create the navbar so that users can navigate the website from any device.``
-  - The navigation menu contains links for Home, Create Booking, Manage Bookings, Sign Up, and Sign in (If the user hasnt signed in).
-  - If the user has sign in the links shown will be Home, Create Booking, Manage Bookings, and Sign Out.
+  - The navigation menu contains different links depending on if a user is signed in or out or if a trainer has signed in.
+  - if the user has not signed in links shown will be Home, Sign up and Sign in.
+  - If the user has signed in the links shown will be Home, Create Booking, Manage Bookings, and Sign Out.
+  - If a trainer has signed in the links shown will be Home, Manage Client Bookings, and Sign Out.
   - The links are displayed on all pages and the navigation menu collapses into the hamburger menu on smaller devices.
 
   ![Mock Up](docs/readme_images/)
@@ -358,3 +360,25 @@ The Montserrat font was used throughout the website. This font is from google fo
 ### Imagery
 
 All images on the site are owned by the site designer.
+
+### Wireframes
+
+- Home page Desktop
+
+![Home Page Web 1](docs/readme_images/home-1-web.webp)
+
+![Home Page Web 2](docs/readme_images/home-2-web.webp)
+
+![Home Page Web 3](docs/readme_images/home-3-web.webp)
+
+- Sign Up Page Desktop
+
+![Sign Up Page Web](docs/readme_images/signup-web_1.webp)
+
+- Sign in Page Desktop
+
+![Sign In Page Web](docs/readme_images/signin-web_1.webp)
+
+- Create Booking Page Desktop
+
+![Create Booking Page Web](docs/readme_images/create-booking-web.webp)
