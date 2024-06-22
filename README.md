@@ -4,7 +4,7 @@ Hero's Personal Training is a comprehensive web application designed to help use
 
 [Live Site - Hero's Personal Training](LINK)
 
-![Mock Up](docs/readme_images/)
+![Mock Up](docs/readme_images/mockup.webp)
 
 ## Table of Contents
 - [Hero's Personal Training](#heros-personal-training)
@@ -97,7 +97,9 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
   - If a trainer has signed in the links shown will be Home, Manage Client Bookings, and Sign Out.
   - The links are displayed on all pages and the navigation menu collapses into the hamburger menu on smaller devices.
 
-  ![Mock Up](docs/readme_images/)
+  ![Navbar](docs/readme_images/navbar.webp)
+  ![Navbar User](docs/readme_images/navbar-user.webp)
+  ![Navbar Trainer](docs/readme_images/navbar-trainer.webp)
 
 2. **Home Page:**
   - ``USER STORY - As a site owner, I would like a home page so that customers can view information about my services.``
@@ -107,9 +109,11 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
     2. About Me Section - Next we have a section that provides info and background about the trainer/trainers.
     3. Service Details Section - Provides the user with all the info on the services provided by the trainer/trainers.
     4. Testimonials Section - Client testimonials are displayed here.
-    5. Call to Action Section - Displays company tag line and priveds another button element that will allow users to make a booking.
+    5. Call to Action Section - Displays company tag line and provides another button element that will allow users to make a booking.
 
-  ![Mock Up](docs/readme_images/)
+  ![Home Page Top](docs/readme_images/home-1.webp)
+  ![Home Page Services](docs/readme_images/home-2.webp)
+  ![Home Page Footer](docs/readme_images/home-3.webp)
 
 3. **Footer:**
   - ``USER STORY - As a developer, I need to create the footer with social media links and contact information.``
@@ -117,7 +121,7 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
   - contains all social page icons which link to the social media sites and open in a new tab.
   - Contains all relevant contact info and address.
 
-  ![Mock Up](docs/readme_images/)
+  ![Footer](docs/readme_images/footer.webp)
 
 4. **Sign Up:**
   - ``USER STORY - As a developer, I need to implement allauth so that users can sign up and have access to the website's features.``
@@ -130,14 +134,14 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
     5. Confirm password - a user must confirm their password here and it must match the password above.
   - If sign up has been successful the user will be redirected to the site home page.
 
-  ![Mock Up](docs/readme_images/)
+  ![Sign Up Page](docs/readme_images/signup.webp)
 
 5. **Create Booking:**
   - ``USER STORY - As a user, I would like to create a new booking when I want to schedule a training session.``
-  - The create booking page only shows when a user has registered with the site as a user and has looged in.
-  - If a user has not signed in they will be redicted to the sign in page.
+  - The create booking page only shows when a user has registered with the site as a user and has logged in.
+  - If a user has not signed in they will be redicted to the sign in page if they click the book now buttons on the home page.
 
-  ![Mock Up](docs/readme_images/)
+  ![Sign In Page](docs/readme_images/signin.webp)
 
   - If a user has successfully sign in they will be sent to the create booking page.
   - The create booking form has 6 sections the user must fill in:
@@ -149,7 +153,7 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
     6. Additional info - The user is asked to provide any additional info they feel is relevant or that theyd like the trainer to know before the first session.
   - If the suer leaves any section incomplete, except for the additional info section the form will not submit.
 
-  ![Mock Up](docs/readme_images/)
+  ![Create Booking Page](docs/readme_images/create-booking.webp)
 
 6. **Managing Bookings:**
   - ``USER STORY - As a user, I would like to view my bookings to check the details.``
@@ -159,27 +163,26 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
   - The are shown the session type, and the date and time it is due to take place.
   - From here the user will have 2 options to edit an existing booking and delete a booking.
 
-  ![Mock Up](docs/readme_images/)
+  ![Manage Bookings User](docs/readme_images/manage-bookings-user.webp)
 
-  - If a user clicks edit they are taken to their origanl booking form with all the info they have already entered when making the booking.
+  - If a user clicks edit they are taken to their original booking form with all the info they have already entered when making the booking.
   - From here the user can change any of the sections and save their changes or cancel them.
 
-  ![Mock Up](docs/readme_images/)
+  ![Edit Bookings User](docs/readme_images/edit-bookings-user.webp)
 
   - If a user clicks on delete they will be asked to confirm if they wish to delete their booking or can cancel the delete request.
 
-  ![Mock Up](docs/readme_images/)
+  ![Delete Bookings User](docs/readme_images/delete-bookings-user.webp)
 
 7. **Trainer Booking Management:**
   - ``USER STORY - As a trainer, I want to be able to view all bookings to manage my schedule.``
-  - At present the site allows for one trainer and that trainer is registered as the sites superuser and can manage their clients bookings via the admin page.
-  - Once the trainer has logged is they can navigated to the bookings section on the admin panel.
+  - At present the site allows for one trainer who is registered as staff via the admin page and can manage their clients bookings.
+  - Once the trainer has logged is they can navigated to the manage client bookings page which will show in the navbar.
   - From here the trainer can see any and all bookings their clients have made.
-  - They can see all the info the client input on the create booking form.
-  - From here they can filter the bookings by date, time or session type.
-  - They can also delete the bookings from this page if they wish.
+  - They will have an overview page that is the same as the user bookings where they can see a list of all bookings which two options to either edit of delete the bookings.
+  - The functionality of the edit and delete bookings is excalty that same as the user/client options outlined above
 
-  ![Mock Up](docs/readme_images/)
+  ![Manage Client Bookings Page](docs/readme_images/manage-client-bookings.webp)
 
 8. **Error Pages**
   - ``As a developer, I need to implement a 404 error page to alert users when they access a non-existent page.``
@@ -351,7 +354,7 @@ This design ensures that the application can effectively manage user bookings, i
 
 ### Colour-Scheme
 
-For this website the primary colors are Black (#212529), Red (#DC3545), and White (#ffffff). The black in mainly used in the nav and footer elements, with some buttons such as call-to-action button being black also. The red is used to give a nice contrast to the black nav and footer elements and is used on most of the buttons throughout the site. White is manily used for all the page backgrounds. These 3 colours match the colour scheme of the pictures used on the site home page and I really like how these all work together to give a clean and professional look.
+For this website the primary colors are Black (#212529), Red (#DC3545), and White (#ffffff). The black in mainly used in the nav and footer elements, with some buttons such as call-to-action button being black also. The red is used to give a nice contrast to the black nav and footer elements and is used on most of the buttons throughout the site. White is mainly used for all the page backgrounds. These 3 colours match the colour scheme of the pictures used on the site home page and I really like how these all work together to give a clean and professional look.
 
 ### Typography
 
@@ -414,3 +417,206 @@ All images on the site are owned by the site designer.
 - Booking Pages Mobile
 
 ![Booking Pages Mobile](docs/readme_images/booking-pages-mobile.webp)
+
+## Security
+
+## Testing
+
+### Functional Testing
+
+**Authentication**
+
+Description:
+
+*Test if a user can sign up to the website*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign Up in the navbar
+2. Enter all relevant details, Email, Username, Password
+3. Click Sign up button
+
+Expected:
+
+Site redirects back to the home page with a message displayed on top of the page saying Successfully signed in as "Username".
+
+Actual:
+
+Site redirects back to the home page with a message displayed on top of the page saying Successfully signed in as "Username".
+
+---
+
+Description:
+
+*Test if a user can sign in once they have signed up to the website*
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Enter all relevant details, Username, Password
+3. Click Sign in button
+
+Expected:
+
+Site redirects back to the home page with a message displayed on top of the page saying Successfully signed in as "Username".
+
+Actual:
+
+Site redirects back to the home page with a message displayed on top of the page saying Successfully signed in as "Username".
+
+---
+
+Description:
+
+*Test if a Trainer can sign in once they have been assigned as staff*
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Enter all relevant details, Username, Password
+3. Click Sign in button
+
+Expected:
+
+Site redirects back to the home page with a message displayed on top of the page saying Successfully signed in as "Username".
+
+Actual:
+
+Site redirects back to the home page with a message displayed on top of the page saying Successfully signed in as "Username".
+
+---
+
+Description:
+
+*Test if a user can sign out of the website*
+
+Steps:
+
+1. Sign in to the website
+2. Click the Sign Out in the navbar
+3. Click Sign out button on the confirm sign out page
+
+Expected:
+
+User is signed out and redirected back to the site home page with a message displayed at the top of the page saying You have signed out.
+
+Actual:
+
+User is signed out and redirected back to the site home page with a message displayed at the top of the page saying You have signed out.
+
+---
+
+Description:
+
+*Test if a trainer can sign out of the website*
+
+Steps:
+
+1. Sign in to the website
+2. Click the Sign Out in the navbar
+3. Click Sign out button on the confirm sign out page
+
+Expected:
+
+Trainer is signed out and redirected back to the site home page with a message displayed at the top of the page saying You have signed out.
+
+Actual:
+
+Trainer is signed out and redirected back to the site home page with a message displayed at the top of the page saying You have signed out.
+
+---
+
+**User Booking**
+
+Description:
+
+*Test if a user can create a booking*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Sign in with correct user details (username and password)
+3. Click on Create Booking page in the navbar
+4. Enter the following details:
+    - Date: (Datepicker) 07/07/2024
+    - Time: (Dropdown) 8:00am - 9:00am
+    - Session Type: (Dropdown) Personal Training
+    - Contact Number: 123456789
+    - Contact Email: test@example.com
+    - Additional Info: (Textbox) Test info
+5. Click book
+
+Expected:
+
+User is taken to booking success screen telling them the booking was successful and allows them to make another booking or return to home page.
+
+Actual:
+
+User is taken to booking success screen telling them the booking was successful and allows them to make another booking or return to home page.
+
+---
+
+Description:
+
+*Test if a user can edit booking*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Sign in with correct user details (username and password)
+3. Click on Manage Bookings page in the navbar
+4. Click edit button assigned to personal_training session at 8am on 07/07/2024
+4. Edit the following details:
+    - Time: (Dropdown) 8:00am - 9:00am
+    - Change time to 9:00am - 10:00am
+5. Click save changes
+
+Expected:
+
+User is taken back to manage booking screen where the edited session time is reflected.
+
+Actual:
+
+User is taken back to manage booking screen where the edited session time is reflected.
+
+---
+
+Description:
+
+*Test if a user can delete a booking*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Sign in with correct user details (username and password)
+3. Click on Manage Bookings page in the navbar
+4. Click delete button assigned to personal_training session at 9am on 07/07/2024
+5. Click delete on confirmation screen
+
+Expected:
+
+User is taken back to manage booking screen where the delete booking has now been removed.
+
+Actual:
+
+User is taken back to manage booking screen where the delete booking has now been removed.
+
+---
+
+**Trainer Booking Management**
+
+Description:
+
+*Test if a trainer can view all user bookings*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Sign in with correct trainer details (username and password)
+3. Click on Manage Client Bookings page in the navbar
+
+Expected:
+
+Trainer should see a full list of all bookings made by all users from that date onwards.
+
+Actual:
+
+Trainer should see a full list of all bookings made by all users from that date onwards.
+
+---
