@@ -236,7 +236,7 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
   - Heroku
 
 - **Site Syling:**
-  - Google Fonts, Favicon.io
+  - Google Fonts, Favicon.io, uxwing.com
 
 - **Image Processing**
   - convertio.co, TinyPNG
@@ -466,7 +466,7 @@ Site redirects back to the home page with a message displayed on top of the page
 
 Description:
 
-*Test if a Trainer can sign in once they have been assigned as staff*
+*Test if a trainer can sign in once they have been assigned as staff*
 
 1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
 2. Enter all relevant details, Username, Password
@@ -620,3 +620,92 @@ Actual:
 Trainer should see a full list of all bookings made by all users from that date onwards.
 
 ---
+
+Description:
+
+*Test if a trainer can edit user bookings*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Sign in with correct trainer details (username and password)
+3. Click on Manage Client Bookings page in the navbar
+4. Click edit button on any of the user bookings
+5. Edit any one field of the user booking:
+    - Date: Currently set at 01/07/2024
+    - Date: Change to 02/07/2024
+6. Click save changes button
+
+Expected:
+
+Trainer is redirected back to manage booking screen where the date change is reflected.
+
+Actual:
+
+Trainer is redirected back to manage booking screen where the date change is reflected.
+
+---
+
+Description:
+
+*Test if a trainer can delete user bookings*
+
+Steps:
+
+1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+2. Sign in with correct trainer details (username and password)
+3. Click on Manage Client Bookings page in the navbar
+4. Click delete button on any of the user bookings
+5. Confirm the deletation
+
+Expected:
+
+Trainer is redirected back to manage booking screen where deleted session has been removed
+
+Actual:
+
+Trainer is redirected back to manage booking screen where deleted session has been removed
+
+---
+
+**Navigation Links**
+
+Testing was performed to ensure all navigation links on the respective pages, navigated to the correct pages as per design. This was done by clicking on the navigation links on each page.
+
+- Home -> index.html
+- Sign Up -> signup.html
+- Sign In -> login.html
+- Create Booking -> create_booking.html
+- Manage Booking -> manage_bookigs.html
+- Manage Client Bookings -> manage_client_bookings.html
+- Sign Out -> logout.html
+
+All navigation links directed to the correct pages as expected.
+
+---
+
+**Footer**
+
+Testing was performed on the footer links by clicking the uxwing icons and ensuring that the social media icon opened their corresponding pages in a new tab. These all behaved as expected.
+
+---
+
+**Page Buttons**
+
+Testing was preformed on all buttons of the website and no issues where found. All functioned as expected.
+
+---
+
+### Negative Testing
+
+Testing was preformed on create booking to ensure:
+
+1. A user cannot book a session for a date in the past.
+2. A user cannot book if any of the fields in the create booking form have been left blank.
+3. A user cannot book a time slot on a date if it has already been booked by someone else.
+4. A user can only enter numbers into the contact number field.
+5. A user mst enter a correct email format in contact email field.
+
+### Unit Testing
+
+### Accessibility
