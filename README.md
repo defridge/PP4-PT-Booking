@@ -709,3 +709,43 @@ Testing was preformed on create booking to ensure:
 ### Unit Testing
 
 ### Accessibility
+
+The [Wave Accessibility](https://wave.webaim.org/) was used to check the accessibility of the site. The details of the report can be found below:
+
+- Errors: No errors where found on any pages of the site.
+- Contrast Errors: When run origanlly a contrast error was found with the color of the active nav links with the background. This was changed and upon reinspection no issues where found
+- Alerts: 2 redundant links where found along with 1 suspicious alternative text and 1 suspicious link text. Upon inspection these where found to be none-issues and as such where left as they were.
+- Structural Elements: No issues where found with any of the structural elements on the website.
+- ARIA: All links have been provided with appropriate aria-labels on the site.
+
+### Validator Testing
+
+#### HTML Validator
+
+#### Python Validator
+
+All python code was checked using the [Pep8](https://pep8ci.herokuapp.com/) validator to ensure code was Pep8 compliant. I did have some errors with lines having too many characters, trailing whitespace, or line spacing but all have been fixed and now all pages run through without any issues. An exception to this is the setting.py file that shows too many characters with the AUTH_PASSWORD_VALIDATORS and I was unable to resolve this.
+
+![PEP8](docs/readme_images/pep8.webp)
+
+#### CSS Validator
+
+The CSS was checked using the [Jigsaw W3C](https://jigsaw.w3.org/css-validator/#validate_by_input) validator and no issues where found with the code.
+
+![JIGSAW](docs/readme_images/w3c-css.webp)
+
+### Lighthouse
+
+The lighthouse report showed good scores across the board in Preformace, Best Practices, Accessibility and SEO.
+
+![Lighthouse](docs/readme_images/lighthouse.webp)
+
+### Responsiveness
+
+- The website was tested on various screen sizes from Galaxy Fold 280px upwards and is responsive and functions as intended.
+- To test this the webpage was loaded in a browser and using Google Dev Tools was changed to 280px and then the responsive window was dragged to max size.
+- The web page responded as intended.
+- Some devices the website was tested on outside of Dev Tools were: Iphone 11, Samsung A6, Macbook Air, HP M27fw FHD monitor.
+
+
+

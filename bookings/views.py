@@ -23,7 +23,8 @@ def create_booking(request):
 @login_required
 def manage_bookings(request):
     bookings = Booking.objects.filter(user=request.user)
-    return render(request, 'bookings/manage_bookings.html', {'bookings': bookings})
+    return render(
+        request, 'bookings/manage_bookings.html', {'bookings': bookings})
 
 
 @login_required
@@ -50,7 +51,8 @@ def delete_booking(request, booking_id):
     if request.method == 'POST':
         booking.delete()
         return redirect('manage_bookings')
-    return render(request, 'bookings/delete_booking.html', {'booking': booking})
+    return render(
+        request, 'bookings/delete_booking.html', {'booking': booking})
 
 
 def custom_login_required_view(view_func):
@@ -60,6 +62,7 @@ def custom_login_required_view(view_func):
             return redirect('account_login')
         return view_func(request, *args, **kwargs)
     return wrapper
+
 
 create_booking = custom_login_required_view(create_booking)
 manage_bookings = custom_login_required_view(manage_bookings)
@@ -71,12 +74,16 @@ delete_booking = custom_login_required_view(delete_booking)
 def is_staff(user):
     return user.is_staff
 
+
 @login_required
 @user_passes_test(is_staff)
 def manage_client_bookings(request):
     today = timezone.now().date()
     bookings = Booking.objects.filter(date__gte=today).order_by('date', 'time')
-    return render(request, 'bookings/manage_client_bookings.html', {'bookings': bookings})
+    return render(
+        request, 'bookings/manage_client_bookings.html',
+        {'bookings': bookings})
+
 
 @login_required
 @user_passes_test(is_staff)
@@ -91,6 +98,7 @@ def edit_client_booking(request, booking_id):
         form = BookingForm(instance=booking)
     return render(request, 'bookings/edit_client_booking.html', {'form': form})
 
+
 @login_required
 @user_passes_test(is_staff)
 def delete_client_booking(request, booking_id):
@@ -98,4 +106,5 @@ def delete_client_booking(request, booking_id):
     if request.method == 'POST':
         booking.delete()
         return redirect('manage_client_bookings')
-    return render(request, 'bookings/delete_client_booking.html', {'booking': booking})
+    return render(
+        request, 'bookings/delete_client_booking.html', {'booking': booking})
