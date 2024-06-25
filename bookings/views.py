@@ -8,6 +8,11 @@ from django.utils import timezone
 
 @login_required
 def create_booking(request):
+    """
+    View to render the booking form
+    and redirct users to booking
+    success if form is valid
+    """
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -22,6 +27,9 @@ def create_booking(request):
 
 @login_required
 def manage_bookings(request):
+    """
+    View to render manage bookings page
+    """
     bookings = Booking.objects.filter(user=request.user)
     return render(
         request, 'bookings/manage_bookings.html', {'bookings': bookings})
@@ -29,6 +37,9 @@ def manage_bookings(request):
 
 @login_required
 def booking_success(request):
+    """
+    View to render booking success page
+    """
     return render(request, 'bookings/booking_success.html')
 
 

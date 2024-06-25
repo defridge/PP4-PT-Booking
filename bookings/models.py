@@ -25,6 +25,9 @@ TIME_CHOICES = [
 
 
 class Booking(models.Model):
+    """
+    Model for session bookings
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(default=get_current_date)
     time = models.CharField(max_length=20, choices=TIME_CHOICES)
@@ -37,6 +40,9 @@ class Booking(models.Model):
         blank=False, null=False, max_length=1000)
 
     class Meta:
+        """
+        Order by date and time
+        """
         unique_together = ('date', 'time')
 
     def __str__(self):

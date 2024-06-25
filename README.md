@@ -422,6 +422,10 @@ All images on the site are owned by the site designer.
 
 ## Security
 
+Views were setup to check login details to see if the person us a user or staff(trainer) and depending on the outcome only certain page links would be shown in the navbar.
+
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+
 ## Testing
 
 ### Functional Testing
@@ -765,5 +769,45 @@ The following git commands were used throughout development to push code to the 
 - ```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
 - ```git push``` - This command was used to push all committed code to the remote repository on github.
 
+### Heroku Deployment
 
+Below are the steps to deploy the project on Heroku:
 
+- Navigate to heroku and create an account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app
+- Go to the settings tab and then click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (Your secret key)
+  - DATABASE_URL: (Value of ElephantSQL URL)
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repositoy you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click deploy
+
+The app should now be deployed.
+
+The live link can be found here: [Live Site](LINK)
+
+### Run Locally
+
+Navigate to the GitHub Repository you want to clone to use locally:
+
+- Click on the code drop down button
+- Click on HTTPS
+- Copy the repository link to the clipboard
+- Open your IDE of choice
+- Type git clone copied-git-url into the IDE terminal
+
+The project will now have been cloned on your local machine for use.
+
+## Credits
+
+"Credit where credit is due"
+1. [w3Schools](https://www.w3schools.com/django/index.php) was referred to through the whole project as a reference and refresher on Django concepts
+2. During the project I purchased a Django course on [udemy.com](https://www.udemy.com/course/python-django-2021-complete-course/learn/lecture/27267960?start=0#overview) so as to become more proficent in building Django apps
+3. As a test run of my ability to use Django I done a code along project with Dee Mc by following her brilliant guide on [Youtube](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=4)
+4. My mentor Gareth McGirr for keeping me on track!
