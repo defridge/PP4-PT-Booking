@@ -19,8 +19,10 @@ Hero's Personal Training is a comprehensive web application designed to help use
   - [Technologies Used](#technologies-used)
   - [Database Design](#database-design)
   - [Site Design](#site-design)
+    - [Wireframes](#wireframes)
   - [Security](#security)
   - [Testing](#testing)
+    - [Functional Testing](#functional-testing)
   - [Deployment](#deployment)
     - [Version Control](#version-control)
     - [Heroku Deployment](#heroku-deployment)
@@ -708,6 +710,12 @@ Testing was preformed on create booking to ensure:
 
 ### Unit Testing
 
+Unit tests were created to test some basic functionality such as templates used, redirects and booking options. These can be found in the tests.py files in the respective apps.
+
+Results:
+
+![UNIT TESTING](docs/readme_images/testing.webp)
+
 ### Accessibility
 
 The [Wave Accessibility](https://wave.webaim.org/) was used to check the accessibility of the site. The details of the report can be found below:
@@ -746,6 +754,16 @@ The lighthouse report showed good scores across the board in Preformace, Best Pr
 - To test this the webpage was loaded in a browser and using Google Dev Tools was changed to 280px and then the responsive window was dragged to max size.
 - The web page responded as intended.
 - Some devices the website was tested on outside of Dev Tools were: Iphone 11, Samsung A6, Macbook Air, HP M27fw FHD monitor.
+
+## Deployment
+
+### Version Control
+
+The site was created using the Visual Studio Code editor and pushed to github to the remote repository.
+The following git commands were used throughout development to push code to the remote repo:
+- ```git add .``` - This command was used to add all changes to the staging area before they are committed.
+- ```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
+- ```git push``` - This command was used to push all committed code to the remote repository on github.
 
 
 
