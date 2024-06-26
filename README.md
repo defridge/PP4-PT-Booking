@@ -732,6 +732,12 @@ The [Wave Accessibility](https://wave.webaim.org/) was used to check the accessi
 
 ### Validator Testing
 
+All pages were run through the [w3 HTML Validator](https://validator.w3.org/). Only issue found was the use of two `<h1>` tags on some of the pages which was rectified by changing the second one to `<h2>` tags instead.
+
+Due to the django templating language code used in the HTML files, these could not be copy and pasted into the validator so to test the validation on the files the source page was opened and this was copied straight to the page to validator page.
+
+![HTML VALIDATOR](docs/readme_images/html-validator.webp)
+
 #### HTML Validator
 
 #### Python Validator

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from django.http import HttpResponseForbidden
 from .forms import BookingForm
 from .models import Booking
 from django.utils import timezone
@@ -70,7 +71,7 @@ def custom_login_required_view(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.info(request, 'Please sign in to access this page.')
-            return redirect('account_login')
+            return HttpResponseForbidden()
         return view_func(request, *args, **kwargs)
     return wrapper
 
@@ -91,6 +92,8 @@ def is_staff(user):
 def manage_client_bookings(request):
     today = timezone.now().date()
     bookings = Booking.objects.filter(date__gte=today).order_by('date', 'time')
+    if not request.user.is_staff:
+        return HttpResponseForbidden()
     return render(
         request, 'bookings/manage_client_bookings.html',
         {'bookings': bookings})
