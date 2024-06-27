@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from django.utils import timezone
 from .forms import BookingForm
 from .models import Booking
-from django.utils import timezone
+
 
 
 @login_required
@@ -31,7 +32,7 @@ def manage_bookings(request):
     View to render manage bookings page
     """
     today = timezone.now().date()
-    bookings = Booking.objects.filter(date__gte=today).order_by('date', 'time')
+    bookings = Booking.objects.filter(user=request.user, date__gte=today)
     return render(
         request, 'bookings/manage_bookings.html', {'bookings': bookings})
 
@@ -48,7 +49,8 @@ def booking_success(request):
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking, current_booking=booking)
+        form = BookingForm(
+            request.POST, instance=booking, current_booking=booking)
         if form.is_valid():
             form.save()
             return redirect('manage_bookings')
@@ -102,7 +104,8 @@ def manage_client_bookings(request):
 def edit_client_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking, current_booking=booking)
+        form = BookingForm(
+            request.POST, instance=booking, current_booking=booking)
         if form.is_valid():
             form.save()
             return redirect('manage_client_bookings')

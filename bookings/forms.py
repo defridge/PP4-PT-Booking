@@ -1,6 +1,8 @@
 from django import forms
-from .models import Booking
 from django.utils import timezone
+from .models import Booking
+
+
 
 class BookingForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -22,7 +24,8 @@ class BookingForm(forms.ModelForm):
             'contact_number': forms.TextInput(attrs={'type': 'tel'}),
             'contact_email': forms.EmailInput(),
             'additional_info': forms.Textarea(attrs={
-                'placeholder': 'Any additional information please provide here...'
+                'placeholder':
+                'Any additional information please provide here...'
             }),
         }
 
@@ -35,7 +38,8 @@ class BookingForm(forms.ModelForm):
     def clean_contact_number(self):
         contact_number = self.cleaned_data['contact_number']
         if not contact_number.isdigit():
-            raise forms.ValidationError("Contact number must contain only digits.")
+            raise forms.ValidationError(
+                "Contact number must contain only digits.")
         return contact_number
 
     def clean(self):
@@ -48,6 +52,7 @@ class BookingForm(forms.ModelForm):
             if self.current_booking:
                 bookings = bookings.exclude(id=self.current_booking.id)
             if bookings.exists():
-                raise forms.ValidationError("This time slot is already booked.")
+                raise forms.ValidationError(
+                    "This time slot is already booked.")
 
         return cleaned_data

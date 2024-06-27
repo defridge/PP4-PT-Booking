@@ -1,8 +1,8 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .models import Booking
 from django.utils import timezone
+from .models import Booking
 from datetime import timedelta
 
 
@@ -61,7 +61,7 @@ class BookingTests(TestCase):
         response = self.client.get(reverse('manage_bookings'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bookings/manage_bookings.html')
-        formatted_date = self.future_date1.strftime('%B %d, %Y')  # Format the date to match the template output
+        formatted_date = self.future_date1.strftime('%B %d, %Y')
         self.assertContains(response, formatted_date)
 
     def test_edit_booking_view(self):
@@ -138,7 +138,7 @@ class BookingTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
                 response, 'bookings/manage_client_bookings.html')
-        formatted_date = self.future_date1.strftime('%B %d, %Y')  # Format the date to match the template output
+        formatted_date = self.future_date1.strftime('%B %d, %Y')
         self.assertContains(response, formatted_date)
 
     def test_edit_client_booking_view(self):
