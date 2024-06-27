@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
-from django.http import HttpResponseForbidden
 from .forms import BookingForm
 from .models import Booking
 from django.utils import timezone
@@ -11,7 +10,7 @@ from django.utils import timezone
 def create_booking(request):
     """
     View to render the booking form
-    and redirct users to booking
+    and redirect users to booking
     success if form is valid
     """
     if request.method == 'POST':
@@ -31,7 +30,8 @@ def manage_bookings(request):
     """
     View to render manage bookings page
     """
-    bookings = Booking.objects.filter(user=request.user)
+    today = timezone.now().date()
+    bookings = Booking.objects.filter(date__gte=today).order_by('date', 'time')
     return render(
         request, 'bookings/manage_bookings.html', {'bookings': bookings})
 
@@ -48,12 +48,12 @@ def booking_success(request):
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
+        form = BookingForm(request.POST, instance=booking, current_booking=booking)
         if form.is_valid():
             form.save()
             return redirect('manage_bookings')
     else:
-        form = BookingForm(instance=booking)
+        form = BookingForm(instance=booking, current_booking=booking)
     return render(request, 'bookings/edit_booking.html', {'form': form})
 
 
@@ -71,7 +71,7 @@ def custom_login_required_view(view_func):
     def wrapper(request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.info(request, 'Please sign in to access this page.')
-            return HttpResponseForbidden()
+            return redirect('account_login')
         return view_func(request, *args, **kwargs)
     return wrapper
 
@@ -92,8 +92,6 @@ def is_staff(user):
 def manage_client_bookings(request):
     today = timezone.now().date()
     bookings = Booking.objects.filter(date__gte=today).order_by('date', 'time')
-    if not request.user.is_staff:
-        return HttpResponseForbidden()
     return render(
         request, 'bookings/manage_client_bookings.html',
         {'bookings': bookings})
@@ -104,12 +102,12 @@ def manage_client_bookings(request):
 def edit_client_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
+        form = BookingForm(request.POST, instance=booking, current_booking=booking)
         if form.is_valid():
             form.save()
             return redirect('manage_client_bookings')
     else:
-        form = BookingForm(instance=booking)
+        form = BookingForm(instance=booking, current_booking=booking)
     return render(request, 'bookings/edit_client_booking.html', {'form': form})
 
 

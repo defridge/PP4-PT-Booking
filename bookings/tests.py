@@ -1,9 +1,9 @@
-# tests.py
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Booking
 from django.utils import timezone
+from datetime import timedelta
 
 
 class BookingTests(TestCase):
@@ -21,13 +21,16 @@ class BookingTests(TestCase):
         self.staff_user = User.objects.create_user(
             username='staffuser', password='12345', is_staff=True)
 
+        self.future_date1 = (timezone.now().date() + timedelta(days=1))
+        self.future_date2 = (timezone.now().date() + timedelta(days=2))
+
     def test_create_booking_view(self):
         """
         Test create booking
         """
         self.client.login(username='testuser', password='12345')
         response = self.client.post(reverse('create_booking'), {
-            'date': '2024-06-26',
+            'date': self.future_date1.isoformat(),
             'time': '10:00',
             'session_type': 'personal_training',
             'duration': 60,
@@ -46,7 +49,7 @@ class BookingTests(TestCase):
         """
         Booking.objects.create(
             user=self.user,
-            date='2024-06-26',
+            date=self.future_date1,
             time='10:00',
             session_type='personal_training',
             duration=60,
@@ -58,7 +61,8 @@ class BookingTests(TestCase):
         response = self.client.get(reverse('manage_bookings'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bookings/manage_bookings.html')
-        self.assertContains(response, 'June 26, 2024')
+        formatted_date = self.future_date1.strftime('%B %d, %Y')  # Format the date to match the template output
+        self.assertContains(response, formatted_date)
 
     def test_edit_booking_view(self):
         """
@@ -66,7 +70,7 @@ class BookingTests(TestCase):
         """
         booking = Booking.objects.create(
             user=self.user,
-            date='2024-06-25',
+            date=self.future_date1,
             time='10:00',
             session_type='personal_training',
             duration=60,
@@ -77,7 +81,7 @@ class BookingTests(TestCase):
         self.client.login(username='testuser', password='12345')
         response = self.client.post(reverse(
             'edit_booking', args=[booking.id]), {
-            'date': '2024-06-26',
+            'date': self.future_date2.isoformat(),
             'time': '11:00',
             'session_type': 'consultation',
             'duration': 60,
@@ -87,7 +91,7 @@ class BookingTests(TestCase):
         })
         self.assertEqual(response.status_code, 302)
         booking.refresh_from_db()
-        self.assertEqual(booking.date, timezone.datetime(2024, 6, 26).date())
+        self.assertEqual(booking.date, self.future_date2)
         self.assertEqual(booking.time, '11:00')
         self.assertEqual(booking.session_type, 'consultation')
         self.assertEqual(booking.duration, 60)
@@ -101,7 +105,7 @@ class BookingTests(TestCase):
         """
         booking = Booking.objects.create(
             user=self.user,
-            date='2024-06-26',
+            date=self.future_date1,
             time='10:00',
             session_type='personal_training',
             duration=60,
@@ -121,7 +125,7 @@ class BookingTests(TestCase):
         """
         Booking.objects.create(
             user=self.user,
-            date='2024-06-26',
+            date=self.future_date1,
             time='10:00',
             session_type='personal_training',
             duration=60,
@@ -134,7 +138,8 @@ class BookingTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
                 response, 'bookings/manage_client_bookings.html')
-        self.assertContains(response, 'June 26, 2024')
+        formatted_date = self.future_date1.strftime('%B %d, %Y')  # Format the date to match the template output
+        self.assertContains(response, formatted_date)
 
     def test_edit_client_booking_view(self):
         """
@@ -142,7 +147,7 @@ class BookingTests(TestCase):
         """
         booking = Booking.objects.create(
             user=self.user,
-            date='2024-06-25',
+            date=self.future_date1,
             time='10:00',
             session_type='personal_training',
             duration=60,
@@ -153,7 +158,7 @@ class BookingTests(TestCase):
         self.client.login(username='staffuser', password='12345')
         response = self.client.post(reverse(
             'edit_client_booking', args=[booking.id]), {
-            'date': '2024-06-26',
+            'date': self.future_date2.isoformat(),
             'time': '11:00',
             'session_type': 'consultation',
             'duration': 60,
@@ -163,7 +168,7 @@ class BookingTests(TestCase):
         })
         self.assertEqual(response.status_code, 302)
         booking.refresh_from_db()
-        self.assertEqual(booking.date, timezone.datetime(2024, 6, 26).date())
+        self.assertEqual(booking.date, self.future_date2)
         self.assertEqual(booking.time, '11:00')
         self.assertEqual(booking.session_type, 'consultation')
         self.assertEqual(booking.duration, 60)
@@ -177,7 +182,7 @@ class BookingTests(TestCase):
         """
         booking = Booking.objects.create(
             user=self.user,
-            date='2024-06-26',
+            date=self.future_date1,
             time='10:00',
             session_type='personal_training',
             duration=60,
