@@ -1,6 +1,6 @@
 # Hero's Personal Training
 
-Hero's Personal Training is a comprehensive web application designed to help users manage their fitness journey through personalized training and nutrition plans. Users can create and manage bookings for personal training sessions, track their progress, and receive customized workout and nutrition advice. The application also allows trainers to manage their clients and schedules efficiently.
+Hero's Personal Training is a comprehensive web application designed to help users manage their fitness by being able to book sessions online with their personal Trainer. Users can create and manage bookings for personal training sessions. The application also allows trainers to manage their clients and schedules efficiently.
 
 [Live Site - Hero's Personal Training](LINK)
 
@@ -35,12 +35,11 @@ Hero's Personal Training is a comprehensive web application designed to help use
 
 - Provide a user-friendly interface for booking and managing personal training sessions.
 - Enable trainers to manage their schedules and client information efficiently.
-- Offer personalized training and nutrition plans to users.
 - Ensure the application is accessible on various devices, including desktops, tablets, and smartphones.
 
 ### Target Audience
 
-- Individuals looking for personalized fitness and nutrition plans.
+- Individuals who are looking for an easy booking system to use for their sessions.
 - Personal trainers who need an efficient way to manage their clients and schedules.
 - Fitness enthusiasts who want to track their progress and achieve their fitness goals.
 
@@ -766,6 +765,10 @@ The lighthouse report showed good scores across the board in Preformace, Best Pr
 - To test this the webpage was loaded in a browser and using Google Dev Tools was changed to 280px and then the responsive window was dragged to max size.
 - The web page responded as intended.
 - Some devices the website was tested on outside of Dev Tools were: Iphone 11, Samsung A6, Macbook Air, HP M27fw FHD monitor.
+
+### Bugs
+
+At present the only bug found in the project was when testing if, when a user is signed in, if they enter a url in the web search bar that they shouldnt have access to, /bookings/manage_clients for example, instead of raising a 403 error the website get caught in a loop and displays a page isnt working message on the screen. While this is not ideal this is highly unlikely to happen in a real world situation as the user would have to know what the url address would be and the only way this would be possible is if they only had trainer/staff logins which would defeat the perpose of trying to navigate to it this way in the first place. This is something I do plan of fixing in the future.
 
 ## Deployment
 

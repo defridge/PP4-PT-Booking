@@ -7,17 +7,20 @@ from datetime import timedelta
 
 
 class BookingTests(TestCase):
+    """
+    Test cases for the Booking model and views
+    """
 
     def setUp(self):
         """
-        Create a regular user
+        Set up the test environment
+
+        Creates a regular user and a staff member,
+        and defines future dates for testing
         """
         self.user = User.objects.create_user(
             username='testuser', password='12345')
 
-        """
-        Create a staff member (trainer)
-        """
         self.staff_user = User.objects.create_user(
             username='staffuser', password='12345', is_staff=True)
 
@@ -26,7 +29,9 @@ class BookingTests(TestCase):
 
     def test_create_booking_view(self):
         """
-        Test create booking
+        Test the create booking view
+
+        Ensures that a booking can be successfully created
         """
         self.client.login(username='testuser', password='12345')
         response = self.client.post(reverse('create_booking'), {
@@ -45,7 +50,9 @@ class BookingTests(TestCase):
 
     def test_manage_bookings_view(self):
         """
-        Test manage bookings
+        Test the manage bookings view
+
+        Ensures that bookings are listed correctly for the user
         """
         Booking.objects.create(
             user=self.user,
@@ -61,12 +68,14 @@ class BookingTests(TestCase):
         response = self.client.get(reverse('manage_bookings'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bookings/manage_bookings.html')
-        formatted_date = self.future_date1.strftime('%B %d, %Y')
+        formatted_date = self.future_date1.strftime('%B %-d, %Y')
         self.assertContains(response, formatted_date)
 
     def test_edit_booking_view(self):
         """
-        Test edit booking
+        Test the edit booking view
+
+        Ensures that a booking can be successfully edited
         """
         booking = Booking.objects.create(
             user=self.user,
@@ -101,7 +110,9 @@ class BookingTests(TestCase):
 
     def test_delete_booking_view(self):
         """
-        Test delete booking
+        Test the delete booking view
+
+        Ensures that a booking can be successfully deleted
         """
         booking = Booking.objects.create(
             user=self.user,
@@ -121,7 +132,9 @@ class BookingTests(TestCase):
 
     def test_manage_client_bookings_view(self):
         """
-        Test if trainer can manage user bookings
+        Test if a trainer can manage user bookings
+
+        Ensures that a staff user can view and manage client bookings
         """
         Booking.objects.create(
             user=self.user,
@@ -138,12 +151,14 @@ class BookingTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
                 response, 'bookings/manage_client_bookings.html')
-        formatted_date = self.future_date1.strftime('%B %d, %Y')
+        formatted_date = self.future_date1.strftime('%B %-d, %Y')
         self.assertContains(response, formatted_date)
 
     def test_edit_client_booking_view(self):
         """
-        Test if trainer can edit client booking
+        Test if a trainer can edit a client booking
+
+        Ensures that a staff user can edit client bookings
         """
         booking = Booking.objects.create(
             user=self.user,
@@ -179,6 +194,9 @@ class BookingTests(TestCase):
     def test_delete_client_booking_view(self):
         """
         Test if trainer can delete user booking
+
+        Log in as a staff member and delete a client booking.
+        Verify that the booking is removed.
         """
         booking = Booking.objects.create(
             user=self.user,

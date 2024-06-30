@@ -4,6 +4,11 @@ from django.contrib.auth.models import User
 
 
 def get_current_date():
+    """
+    Returns the current date
+
+    Returns: datetime.date: The current date
+    """
     return timezone.now().date()
 
 
@@ -26,7 +31,9 @@ TIME_CHOICES = [
 
 class Booking(models.Model):
     """
-    Model for session bookings
+    Model representing a booking for a session
+
+    :model.`auth.User`
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(default=get_current_date)
@@ -41,10 +48,17 @@ class Booking(models.Model):
 
     class Meta:
         """
-        Order by date and time
+        Meta info for Booking model
+
+        Ensures each booking is unique by date and time
         """
         unique_together = ('date', 'time')
 
     def __str__(self):
+        """
+        Returns a string representation of the booking
+
+        Returns: str: The string representation of the booking
+        """
         return (f"{self.user.username} - {self.session_type} on "
                 f"{self.date} at {self.time}")
