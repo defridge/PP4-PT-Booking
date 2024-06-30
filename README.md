@@ -1,8 +1,8 @@
 # Hero's Personal Training
 
-Hero's Personal Training is a comprehensive web application designed to help users manage their fitness by being able to book sessions online with their personal Trainer. Users can create and manage bookings for personal training sessions. The application also allows trainers to manage their clients and schedules efficiently.
+Hero's Personal Training is a comprehensive web application designed to help users manage their fitness by booking sessions online with their personal trainer. Users can create and manage bookings for personal training or consultation sessions. The application also allows trainers to manage their clients and schedules efficiently.
 
-[Live Site - Hero's Personal Training](LINK)
+[Live Site - Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/)
 
 ![Mock Up](docs/readme_images/mockup.webp)
 
@@ -93,7 +93,7 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 1. **Site Navigation/Nav Menu:** 
   - ``USER STORY - As a developer, I need to create the navbar so that users can navigate the website from any device.``
   - The navigation menu contains different links depending on if a user is signed in or out or if a trainer has signed in.
-  - if the user has not signed in links shown will be Home, Sign up and Sign in.
+  - if the user has not signed in, the links shown will be Home, Sign up, and Sign in.
   - If the user has signed in the links shown will be Home, Create Booking, Manage Bookings, and Sign Out.
   - If a trainer has signed in the links shown will be Home, Manage Client Bookings, and Sign Out.
   - The links are displayed on all pages and the navigation menu collapses into the hamburger menu on smaller devices.
@@ -140,17 +140,17 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 5. **Create Booking:**
   - ``USER STORY - As a user, I would like to create a new booking when I want to schedule a training session.``
   - The create booking page only shows when a user has registered with the site as a user and has logged in.
-  - If a user has not signed in they will be redicted to the sign in page if they click the book now buttons on the home page.
+  - If a user has not signed in they will be redirected to the sign in page if they click the book now buttons on the home page.
 
   ![Sign In Page](docs/readme_images/signin.webp)
 
   - If a user has successfully sign in they will be sent to the create booking page.
   - The create booking form has 6 sections the user must fill in:
     1. Date - The user is asked to choose a date for their session.
-    2. Time - The user will be asked to choose a a time for there session that are predetermined by the trainer (if the time is already booked the user will be asked to choose another time).
+    2. Time - The user will be asked to choose a time for their session that are predetermined by the trainer (if the time is already booked, the user will be asked to choose another time).
     3. Session Type - The user will have a choice between 2 session types: Consultation or Personal Training.
-    4. Contact number - The user must enter a contact number.
-    5. Email address - The user must enter a email address.
+    4. Contact Number - The user must enter a contact number.
+    5. Email Address - The user must enter a email address.
     6. Additional info - The user is asked to provide any additional info they feel is relevant or that theyd like the trainer to know before the first session.
   - If the suer leaves any section incomplete, except for the additional info section the form will not submit.
 
@@ -161,7 +161,7 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
   - ``USER STORY - As a user, I would like to edit a booking to make changes when needed.``
   - ``USER STORY - As a user, I would like to delete a booking when I no longer need it.``
   - On the manage booking page the user is able to see all the sessions they have booked with the trainer.
-  - The are shown the session type, and the date and time it is due to take place.
+  - They are shown the session type, and the date and time it is due to take place.
   - From here the user will have 2 options to edit an existing booking and delete a booking.
 
   ![Manage Bookings User](docs/readme_images/manage-bookings-user.webp)
@@ -178,10 +178,10 @@ The Kanban board was created using GitHub projects and can be viewed [here](http
 7. **Trainer Booking Management:**
   - ``USER STORY - As a trainer, I want to be able to view all bookings to manage my schedule.``
   - At present the site allows for one trainer who is registered as staff via the admin page and can manage their clients bookings.
-  - Once the trainer has logged is they can navigated to the manage client bookings page which will show in the navbar.
+  - Once the trainer has logged in, they can navigate to the manage client bookings page which will show in the navbar.
   - From here the trainer can see any and all bookings their clients have made.
   - They will have an overview page that is the same as the user bookings where they can see a list of all bookings which two options to either edit of delete the bookings.
-  - The functionality of the edit and delete bookings is excalty that same as the user/client options outlined above
+  - The functionality of the edit and delete bookings is exactly that same as the user/client options outlined above
 
   ![Manage Client Bookings Page](docs/readme_images/manage-client-bookings.webp)
 
@@ -423,7 +423,7 @@ All images on the site are owned by the site designer.
 
 Views were setup to check login details to see if the person us a user or staff(trainer) and depending on the outcome only certain page links would be shown in the navbar.
 
-Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the Heroku config vars within the project.
 
 ## Testing
 
@@ -437,7 +437,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign Up in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign Up in the navbar
 2. Enter all relevant details, Email, Username, Password
 3. Click Sign up button
 
@@ -455,7 +455,7 @@ Description:
 
 *Test if a user can sign in once they have signed up to the website*
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Enter all relevant details, Username, Password
 3. Click Sign in button
 
@@ -473,7 +473,7 @@ Description:
 
 *Test if a trainer can sign in once they have been assigned as staff*
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Enter all relevant details, Username, Password
 3. Click Sign in button
 
@@ -535,7 +535,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Sign in with correct user details (username and password)
 3. Click on Create Booking page in the navbar
 4. Enter the following details:
@@ -563,7 +563,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Sign in with correct user details (username and password)
 3. Click on Manage Bookings page in the navbar
 4. Click edit button assigned to personal_training session at 8am on 07/07/2024
@@ -588,7 +588,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Sign in with correct user details (username and password)
 3. Click on Manage Bookings page in the navbar
 4. Click delete button assigned to personal_training session at 9am on 07/07/2024
@@ -612,7 +612,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Sign in with correct trainer details (username and password)
 3. Click on Manage Client Bookings page in the navbar
 
@@ -632,7 +632,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Sign in with correct trainer details (username and password)
 3. Click on Manage Client Bookings page in the navbar
 4. Click edit button on any of the user bookings
@@ -657,7 +657,7 @@ Description:
 
 Steps:
 
-1. Navigate to [Hero's Personal Training](LINK) and click Sign In in the navbar
+1. Navigate to [Hero's Personal Training](https://pp4-pt-booking-7e8a48051629.herokuapp.com/) and click Sign In in the navbar
 2. Sign in with correct trainer details (username and password)
 3. Click on Manage Client Bookings page in the navbar
 4. Click delete button on any of the user bookings
@@ -681,7 +681,7 @@ Testing was performed to ensure all navigation links on the respective pages, na
 - Sign Up -> signup.html
 - Sign In -> login.html
 - Create Booking -> create_booking.html
-- Manage Booking -> manage_bookigs.html
+- Manage Booking -> manage_bookings.html
 - Manage Client Bookings -> manage_client_bookings.html
 - Sign Out -> logout.html
 
@@ -697,13 +697,13 @@ Testing was performed on the footer links by clicking the uxwing icons and ensur
 
 **Page Buttons**
 
-Testing was preformed on all buttons of the website and no issues where found. All functioned as expected.
+Testing was performed on all buttons of the website and no issues where found. All functioned as expected.
 
 ---
 
 ### Negative Testing
 
-Testing was preformed on create booking to ensure:
+Testing was performed on create booking to ensure:
 
 1. A user cannot book a session for a date in the past.
 2. A user cannot book if any of the fields in the create booking form have been left blank.
@@ -743,7 +743,7 @@ There was some errors found with the form generated by Django's allauth signup p
 
 #### Python Validator
 
-All python code was checked using the [Pep8](https://pep8ci.herokuapp.com/) validator to ensure code was Pep8 compliant. I did have some errors with lines having too many characters, trailing whitespace, or line spacing but all have been fixed and now all pages run through without any issues. An exception to this is the setting.py file that shows too many characters with the AUTH_PASSWORD_VALIDATORS and I was unable to resolve this.
+All python code was checked using the [Pep8](https://pep8ci.herokuapp.com/) validator to ensure code was PEP8 compliant. I did have some errors with lines having too many characters, trailing whitespace, or line spacing but all have been fixed and now all pages run through without any issues. An exception to this is the setting.py file that shows too many characters with the AUTH_PASSWORD_VALIDATORS and I was unable to resolve this.
 
 ![PEP8](docs/readme_images/pep8.webp)
 
@@ -755,7 +755,7 @@ The CSS was checked using the [Jigsaw W3C](https://jigsaw.w3.org/css-validator/#
 
 ### Lighthouse
 
-The lighthouse report showed good scores across the board in Preformace, Best Practices, Accessibility and SEO.
+The lighthouse report showed good scores across the board in Performance, Best Practices, Accessibility and SEO.
 
 ![Lighthouse](docs/readme_images/lighthouse.webp)
 
@@ -764,11 +764,11 @@ The lighthouse report showed good scores across the board in Preformace, Best Pr
 - The website was tested on various screen sizes from Galaxy Fold 280px upwards and is responsive and functions as intended.
 - To test this the webpage was loaded in a browser and using Google Dev Tools was changed to 280px and then the responsive window was dragged to max size.
 - The web page responded as intended.
-- Some devices the website was tested on outside of Dev Tools were: Iphone 11, Samsung A6, Macbook Air, HP M27fw FHD monitor.
+- Some devices the website was tested on outside of Dev Tools were: iPhone 11, Samsung A6, Macbook Air, HP M27fw FHD monitor.
 
 ### Bugs
 
-At present the only bug found in the project was when testing if, when a user is signed in, if they enter a url in the web search bar that they shouldnt have access to, /bookings/manage_clients for example, instead of raising a 403 error the website get caught in a loop and displays a page isnt working message on the screen. While this is not ideal this is highly unlikely to happen in a real world situation as the user would have to know what the url address would be and the only way this would be possible is if they only had trainer/staff logins which would defeat the perpose of trying to navigate to it this way in the first place. This is something I do plan of fixing in the future.
+At present the only bug found in the project was when testing if, when a user is signed in, if they enter a url in the web search bar that they shouldnt have access to, /bookings/manage_clients for example, instead of raising a 403 error the website get caught in a loop and displays a page isnt working message on the screen. While this is not ideal this is highly unlikely to happen in a real world situation as the user would have to know what the url address would be and the only way this would be possible is if they only had trainer/staff logins which would defeat the purpose of trying to navigate to it this way in the first place. This is something I do plan of fixing in the future.
 
 ## Deployment
 
@@ -784,7 +784,7 @@ The following git commands were used throughout development to push code to the 
 
 Below are the steps to deploy the project on Heroku:
 
-- Navigate to heroku and create an account
+- Navigate to Heroku and create an account
 - Click the new button in the top right corner
 - Select create new app
 - Enter app name
@@ -795,13 +795,13 @@ Below are the steps to deploy the project on Heroku:
   - DATABASE_URL: (Value of ElephantSQL URL)
 - Click the deploy tab
 - Scroll down to Connect to GitHub and sign in / authorize when prompted
-- In the search box, find the repositoy you want to deploy and click connect
+- In the search box, find the repository you want to deploy and click connect
 - Scroll down to Manual deploy and choose the main branch
 - Click deploy
 
 The app should now be deployed.
 
-The live link can be found here: [Live Site](LINK)
+The live link can be found here: [Live Site](https://pp4-pt-booking-7e8a48051629.herokuapp.com/)
 
 ### Run Locally
 
